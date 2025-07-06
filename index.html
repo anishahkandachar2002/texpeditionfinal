@@ -1,0 +1,1258 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebMaster Tools Suite - Premium Tool Descriptions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --primary-light: #818cf8;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --danger: #ef4444;
+            --light: #f8fafc;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --gray-light: #e2e8f0;
+            --gradient: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Header Styles */
+        header {
+            background: var(--gradient);
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: var(--shadow-lg);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background-color: rgba(99, 102, 241, 0.9);
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            padding: 1rem 0;
+            box-shadow: var(--shadow-xl);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo i {
+            font-size: 1.8rem;
+            color: var(--accent);
+            animation: pulse 2s infinite;
+        }
+        
+        .logo span {
+            color: white;
+            position: relative;
+        }
+        
+        .logo span::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover span::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: var(--gradient);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s forwards;
+            opacity: 0;
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            z-index: 1;
+        }
+        
+        /* Floating Particles */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: float linear infinite;
+        }
+        
+        /* Tool Section Styles */
+        .tool-section {
+            padding: 6rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tool-section:nth-child(even) {
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .section-title.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .section-title h2 {
+            font-size: 2.75rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .tool-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .tool-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+        
+        .tool-card:hover::before {
+            width: 10px;
+        }
+        
+        .tool-card-header {
+            padding: 2rem;
+            background: linear-gradient(to right, rgba(99, 102, 241, 0.1), transparent);
+            border-bottom: 1px solid var(--gray-light);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .tool-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.75rem;
+            flex-shrink: 0;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .tool-card-header h3 {
+            font-size: 1.75rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .tool-card-header p {
+            color: var(--gray);
+        }
+        
+        .tool-card-body {
+            padding: 2rem;
+        }
+        
+        .tool-card-body ul {
+            list-style: none;
+        }
+        
+        .tool-card-body li {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .tool-card-body li:hover {
+            transform: translateX(5px);
+        }
+        
+        .tool-card-body li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--secondary);
+        }
+        
+        .process-steps {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease 0.2s;
+        }
+        
+        .process-steps.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .process-steps::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: var(--primary-light);
+            opacity: 0.1;
+            border-radius: 50%;
+            transform: translate(50px, -50px);
+        }
+        
+        .process-steps h4 {
+            color: var(--primary-dark);
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .process-steps h4::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .step {
+            display: flex;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .step:last-child {
+            margin-bottom: 0;
+        }
+        
+        .step::before {
+            content: '';
+            position: absolute;
+            left: 25px;
+            top: 40px;
+            bottom: -2rem;
+            width: 2px;
+            background: var(--gray-light);
+            z-index: -1;
+        }
+        
+        .step:last-child::before {
+            display: none;
+        }
+        
+        .step-number {
+            background: var(--gradient);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+            font-weight: 700;
+            font-size: 1.25rem;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .step-content {
+            flex: 1;
+            padding-top: 0.5rem;
+        }
+        
+        .step-content h5 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary-dark);
+        }
+        
+        .step-content p {
+            color: var(--gray);
+        }
+        
+        /* Floating Shapes */
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--primary);
+            top: -150px;
+            right: -150px;
+            animation: float 15s ease infinite;
+        }
+        
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            background: var(--accent);
+            bottom: -100px;
+            left: -100px;
+            animation: float 12s ease infinite 2s;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 0 2rem;
+            position: relative;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .footer-logo i {
+            color: var(--accent);
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-links a {
+            color: var(--gray-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .social-links a {
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            color: var(--gray);
+            font-size: 0.9rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+        
+        @keyframes particle-float {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .tool-card-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .tool-icon {
+                margin-bottom: 1rem;
+            }
+            
+            .step {
+                flex-direction: column;
+            }
+            
+            .step-number {
+                margin-bottom: 1rem;
+                margin-right: 0;
+            }
+            
+            .step::before {
+                left: 25px;
+                top: 50px;
+                bottom: -2rem;
+                height: calc(100% - 50px);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .tool-card-header h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-tools"></i>
+                    <span>WebMasterTools</span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="particles" id="particles"></div>
+        <div class="hero-content">
+            <h1>Premium WebMaster Tools Suite</h1>
+            <p>Advanced solutions for email compliance, ad verification, website analysis, legal document generation, and uptime monitoring</p>
+        </div>
+        <div class="scroll-down" id="scrollDown">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Email Checker Tool -->
+    <section class="tool-section" id="email-checker">
+        <div class="container">
+            <div class="section-title">
+                <h2>Email Compliance Checker</h2>
+                <p>Ensure your emails meet all regulatory requirements and avoid spam filters with our advanced analysis system</p>
+            </div>
+            
+            <div class="tool-card">
+                <div class="tool-card-header">
+                    <div class="tool-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h3>How Our Email Checker Works</h3>
+                        <p>Advanced analysis for maximum deliverability and compliance</p>
+                    </div>
+                </div>
+                <div class="tool-card-body">
+                    <p>Our Email Compliance Checker analyzes your email content against multiple criteria to ensure maximum deliverability and legal compliance:</p>
+                    
+                    <ul>
+                        <li><strong>Spam Detection:</strong> The system scans your email content for characteristics commonly flagged by spam filters, including suspicious phrases, excessive capitalization, and misleading subject lines.</li>
+                        <li><strong>Regulatory Compliance:</strong> Automatically checks your email against GDPR, CAN-SPAM, CASL, and other regional regulations based on your target audience's location.</li>
+                        <li><strong>Industry-Specific Rules:</strong> Validates content against specialized guidelines for healthcare, finance, e-commerce, and other regulated industries.</li>
+                        <li><strong>Multi-Format Support:</strong> Processes plain text emails, HTML emails, and even images containing email text through OCR technology.</li>
+                        <li><strong>Comprehensive Reporting:</strong> Generates a detailed report highlighting compliance issues, spam risks, and recommendations for improvement.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="process-steps">
+                <h4>How It Works Behind the Scenes</h4>
+                
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h5>Content Analysis</h5>
+                        <p>The system parses your email content to identify structural elements (headers, footers, links) and analyzes the text for spam indicators.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h5>Regulatory Check</h5>
+                        <p>Based on your specified target regions, the tool verifies required elements like unsubscribe mechanisms, physical addresses, and privacy notices.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h5>Industry Validation</h5>
+                        <p>For regulated industries, the system checks for prohibited claims, required disclaimers, and special compliance requirements.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h5>Report Generation</h5>
+                        <p>The tool compiles all findings into an easy-to-understand report with actionable recommendations and compliance scores for each category.</p>
+                    </div>
+                </div>
+                
+     <a href="">  <center><button style="background-color: #4CAF50; color: white; padding: 12px 24px; font-size: 16px; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: background-color 0.3s;">
+  Try out
+</button></a>
+</center>   
+            </div>
+        </div>
+        <div class="shape shape-1"></div>
+    </section>
+
+    <!-- Ads Checker Tool -->
+    <section class="tool-section" id="ads-checker">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ads & Post Compliance Checker</h2>
+                <p>Ensure your social media content meets platform guidelines and legal requirements with our AI-powered verification</p>
+            </div>
+            
+            <div class="tool-card">
+                <div class="tool-card-header">
+                    <div class="tool-icon">
+                        <i class="fas fa-ad"></i>
+                    </div>
+                    <div>
+                        <h3>How Our Ads Checker Works</h3>
+                        <p>Comprehensive verification for social media compliance</p>
+                    </div>
+                </div>
+                <div class="tool-card-body">
+                    <p>Our comprehensive ad checker helps you verify that your social media posts and advertisements comply with platform rules and regulations:</p>
+                    
+                    <ul>
+                        <li><strong>Content Safety Detection:</strong> Uses advanced image recognition to classify content as SFW (Safe for Work) or NSFW (Not Safe for Work) based on platform standards.</li>
+                        <li><strong>Toxic Language Scanner:</strong> Analyzes captions, hashtags, and comments for prohibited or offensive language that might get your post flagged or banned.</li>
+                        <li><strong>Image/Video Processing:</strong> Examines visual content for restricted elements (nudity, violence, copyrighted material) through object recognition and label detection.</li>
+                        <li><strong>Platform-Specific Rules:</strong> Checks against the latest community guidelines from Facebook, Instagram, Twitter, LinkedIn, TikTok, and other platforms.</li>
+                        <li><strong>Regulatory Compliance:</strong> Verifies adherence to advertising standards, disclosure requirements, and consumer protection laws.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="process-steps">
+                <h4>How It Works Behind the Scenes</h4>
+                
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h5>Content Ingestion</h5>
+                        <p>The system accepts your ad creative (images, videos, text) and identifies all elements that need verification.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h5>Platform Rules Application</h5>
+                        <p>Based on your selected platform(s), the tool applies the specific community guidelines and advertising policies.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h5>Comprehensive Scanning</h5>
+                        <p>Text is analyzed for prohibited language, while images/videos are processed through computer vision models to detect policy violations.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h5>Risk Assessment</h5>
+                        <p>The tool generates a risk score for each potential issue and provides specific recommendations for compliance.</p>
+                    </div>
+                </div>
+
+
+                <center>
+                <a href="https://fullpost-8zhx3numvxsfqcjkksgxcv.streamlit.app/" target="_blank">  <button style="background-color: #4CAF50; color: white; padding: 12px 24px; font-size: 16px; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: background-color 0.3s;">
+  Try out
+</button></a>
+</center>
+            </div>
+        </div>
+        <div class="shape shape-2"></div>
+    </section>
+
+    <!-- Website Checker Tool -->
+    <section class="tool-section" id="website-checker">
+        <div class="container">
+            <div class="section-title">
+                <h2>Website Compliance & SEO Analyzer</h2>
+                <p>Complete audit of your website's technical health, SEO, and regulatory compliance with our advanced scanner</p>
+            </div>
+            
+            <div class="tool-card">
+                <div class="tool-card-header">
+                    <div class="tool-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div>
+                        <h3>How Our Website Checker Works</h3>
+                        <p>360-degree analysis for optimal website performance</p>
+                    </div>
+                </div>
+                <div class="tool-card-body">
+                    <p>Our Website Analyzer provides a comprehensive evaluation of your site's performance, compliance, and optimization:</p>
+                    
+                    <ul>
+                        <li><strong>SEO Analysis:</strong> Evaluates on-page SEO factors including meta tags, headings, content structure, mobile-friendliness, and page speed.</li>
+                        <li><strong>Accessibility Audit:</strong> Checks WCAG compliance for visual, auditory, motor, and cognitive accessibility requirements.</li>
+                        <li><strong>Best Practices Review:</strong> Assesses security headers, caching policies, modern web standards, and performance optimizations.</li>
+                        <li><strong>HTML Validation:</strong> Identifies HTML/CSS errors that might affect rendering or functionality across browsers.</li>
+                        <li><strong>Regulatory Compliance:</strong> Verifies GDPR, cookie policies, privacy notices, and other legal requirements based on your target regions.</li>
+                        <li><strong>Security Checks:</strong> Examines SSL/TLS configuration, mixed content issues, and vulnerability indicators.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="process-steps">
+                <h4>How It Works Behind the Scenes</h4>
+                
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h5>Website Crawling</h5>
+                        <p>The tool crawls your website to analyze all public pages, following links up to a specified depth.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h5>Multi-Dimensional Analysis</h5>
+                        <p>Each page is evaluated against hundreds of SEO, accessibility, performance, and compliance criteria.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h5>Third-Party Verification</h5>
+                        <p>The system checks external services like SSL certificates, CDN usage, and third-party trackers.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h5>Report Compilation</h5>
+                        <p>All findings are compiled into a comprehensive report with prioritized recommendations and visual scoring.</p>
+                    </div>
+                </div>
+                <center>
+<h3>Use API as:AIzaSyCbQDhKdp0CYvolTi-fNkBaGMVmjPCc0ro</h3>
+                <a href="https://websiteaudit-6n6vfz5um2ntdpjxxoju46.streamlit.app/" target="_blank">  <button style="background-color: #4CAF50; color: white; padding: 12px 24px; font-size: 16px; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: background-color 0.3s;">
+  Try out
+</button></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- T&C Generator Tool -->
+    <section class="tool-section" id="terms-generator">
+        <div class="container">
+            <div class="section-title">
+                <h2>AI Terms & Conditions Generator</h2>
+                <p>Automated creation of customized legal documents for your website or app with our intelligent system</p>
+            </div>
+            
+            <div class="tool-card">
+                <div class="tool-card-header">
+                    <div class="tool-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <div>
+                        <h3>How Our T&C Generator Works</h3>
+                        <p>AI-powered legal document creation tailored to your needs</p>
+                    </div>
+                </div>
+                <div class="tool-card-body">
+                    <p>Our AI-powered generator creates legally-compliant Terms & Conditions tailored to your specific needs:</p>
+                    
+                    <ul>
+                        <li><strong>Jurisdiction-Specific Clauses:</strong> Automatically includes required elements based on your country's laws (GDPR for EU, CCPA for California, etc.).</li>
+                        <li><strong>Industry-Tailored Content:</strong> Generates specialized clauses for e-commerce, SaaS, apps, blogs, and other business models.</li>
+                        <li><strong>Comprehensive Coverage:</strong> Includes sections on intellectual property, user obligations, limitations of liability, dispute resolution, and more.</li>
+                        <li><strong>Regular Updates:</strong> The system stays current with changing regulations to ensure ongoing compliance.</li>
+                        <li><strong>Customizable Outputs:</strong> Generates documents in HTML, plain text, or downloadable DOCX/PDF formats.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="process-steps">
+                <h4>How It Works Behind the Scenes</h4>
+                
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h5>Business Profile Analysis</h5>
+                        <p>The system evaluates your business type, location, and industry to determine applicable legal requirements.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h5>Clause Selection</h5>
+                        <p>Relevant legal clauses are selected from our database of vetted templates based on your profile.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h5>Customization</h5>
+                        <p>Specific details (company name, jurisdiction, etc.) are inserted into the template to create your customized document.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h5>Quality Review</h5>
+                        <p>The generated document undergoes automated checks for completeness and consistency before delivery.</p>
+                    </div>
+                </div>
+<center>
+                <a href="https://tandcgen-rxbhwa9ernclr6cdfrupye.streamlit.app/" target="_blank">  <button style="background-color: #4CAF50; color: white; padding: 12px 24px; font-size: 16px; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: background-color 0.3s;">
+  Try out
+</button></a>
+</center>
+            </div>
+        </div>
+    </section>
+
+
+
+
+<!-- Cookie Policy & Privacy Policy Generator Tool -->
+<section class="tool-section" id="privacy-generator">
+    <div class="container">
+        <div class="section-title">
+            <h2>AI Privacy & Cookie Policy Generator</h2>
+            <p>Generate privacy and cookie policies tailored to your website or app with AI precision</p>
+        </div>
+
+        <div class="tool-card">
+            <div class="tool-card-header">
+                <div class="tool-icon">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <div>
+                    <h3>How Our Policy Generator Works</h3>
+                    <p>AI-driven policy creation for global compliance and transparency</p>
+                </div>
+            </div>
+            <div class="tool-card-body">
+                <p>Our AI generator crafts compliant privacy and cookie policies for your digital platform:</p>
+
+                <ul>
+                    <li><strong>GDPR, CCPA, and More:</strong> Automatically adapts to international privacy laws based on your region.</li>
+                    <li><strong>Platform-Aware Policies:</strong> Supports e-commerce, mobile apps, SaaS, content websites, and more.</li>
+                    <li><strong>Detailed Clauses:</strong> Includes data usage, cookie practices, third-party integrations, consent mechanisms, and data subject rights.</li>
+                    <li><strong>Auto Compliance Checks:</strong> Keeps policies up to date with evolving data protection regulations.</li>
+                    <li><strong>Multi-Format Exports:</strong> Download your policy in HTML, plain TXT, or JSON formats for easy integration.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="process-steps">
+            <h4>How It Works Behind the Scenes</h4>
+
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h5>Business & Data Profile</h5>
+                    <p>We assess your data collection, use patterns, cookies, and user base to identify compliance requirements.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h5>Policy Logic Matching</h5>
+                    <p>The system pulls accurate clauses from verified databases depending on your platform and region.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h5>Smart Customization</h5>
+                    <p>Your brand, business model, and practices are embedded into the document in real time.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h5>Compliance & Format Check</h5>
+                    <p>The final policy is checked for structure and legal completeness before allowing format selection for download.</p>
+                </div>
+            </div>
+
+            <center>
+                <a href="https://cookies-k2kfj44dmwtrmqhvcqixxc.streamlit.app/" target="_blank">
+                    <button style="background-color: #4CAF50; color: white; padding: 12px 24px; font-size: 16px; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: background-color 0.3s;">
+                        Try it Out
+                    </button>
+                </a>
+                <p style="margin-top: 10px; color: #555;">Export as: <strong>HTML</strong>, <strong>TXT</strong>, or <strong>JSON</strong></p>
+            </center>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Uptime Tracker Tool -->
+    <section class="tool-section" id="uptime-tracker">
+        <div class="container">
+            <div class="section-title">
+                <h2>Website Uptime Monitor</h2>
+                <p>24/7 monitoring to ensure your website is always available with our global tracking network</p>
+            </div>
+            
+            <div class="tool-card">
+                <div class="tool-card-header">
+                    <div class="tool-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div>
+                        <h3>How Our Uptime Tracker Works</h3>
+                        <p>Continuous monitoring from multiple global locations</p>
+                    </div>
+                </div>
+                <div class="tool-card-body">
+                    <p>Our monitoring service constantly checks your website's availability and performance from multiple global locations:</p>
+                    
+                    <ul>
+                        <li><strong>Continuous Monitoring:</strong> Checks your website at configurable intervals (from 1 minute to 1 hour) from multiple global locations.</li>
+                        <li><strong>Instant Alerts:</strong> Notifies you immediately via email, SMS, or webhook when your site goes down or experiences performance degradation.</li>
+                        <li><strong>Performance Metrics:</strong> Tracks response times, downtime duration, and patterns to help identify underlying issues.</li>
+                        <li><strong>SSL Monitoring:</strong> Alerts you before your SSL certificate expires to prevent security warnings.</li>
+                        <li><strong>Historical Reporting:</strong> Provides detailed uptime statistics and trends over daily, weekly, and monthly periods.</li>
+                        <li><strong>Root Cause Analysis:</strong> When available, identifies common causes of downtime (DNS issues, server errors, etc.).</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="process-steps">
+                <h4>How It Works Behind the Scenes</h4>
+                
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h5>Global Monitoring Network</h5>
+                        <p>Our distributed servers around the world periodically attempt to access your website using standard HTTP/HTTPS requests.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h5>Response Validation</h5>
+                        <p>Each check verifies that the website returns a valid HTTP status code (200 OK) within the expected time frame.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h5>Incident Detection</h5>
+                        <p>When multiple locations detect an issue, the system confirms the outage and triggers alerts.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h5>Recovery Verification</h5>
+                        <p>The system continues checking more frequently until the site recovers, then sends a resolution notification.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-tools"></i>
+                    WebMasterTools
+                </div>
+                <div class="footer-links">
+                    <a href="#email-checker">Email Checker</a>
+                    <a href="#ads-checker">Ads Checker</a>
+                    <a href="#website-checker">Website Analyzer</a>
+                    <a href="#terms-generator">T&C Generator</a>
+                    <a href="#uptime-tracker">Uptime Tracker</a>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+                <div class="copyright">
+                    &copy; Developed by Byte Bandits(Anish and Durgesh) for world
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random size between 2px and 6px
+                const size = Math.random() * 4 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Random position
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                // Random animation duration between 10s and 20s
+                const duration = Math.random() * 10 + 10;
+                particle.style.animation = `particle-float ${duration}s linear infinite`;
+                
+                // Random delay
+                particle.style.animationDelay = `${Math.random() * 20}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        // Scroll to sections
+        document.getElementById('scrollDown').addEventListener('click', () => {
+            document.querySelector('.tool-section').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all animated elements
+        document.querySelectorAll('.section-title, .tool-card, .process-steps').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Initialize particles when page loads
+        window.addEventListener('load', createParticles);
+    </script>
+</body>
+</html>
