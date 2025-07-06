@@ -6,7 +6,7 @@ A fully responsive, single-page HTML & CSS website that serves as a hub for AI-d
 
 ## 🚀 Live Demo
 
-[🔗 Click here to view the live site](https://your-live-site-link.com)
+[🔗 Click here to view the live site](https://texpedition.rf.gd/Prototype/)
 
 ---
 
@@ -46,5 +46,5 @@ A fully responsive, single-page HTML & CSS website that serves as a hub for AI-d
 
 ---
 
-## 📁 Folder Structure
+
 
