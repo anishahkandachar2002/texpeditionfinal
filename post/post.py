@@ -20,7 +20,7 @@ import os
 from huggingface_hub import InferenceClient
 
 # Paste your token here securely
-os.environ["HF_TOKEN"] = "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"
+
 
 client = InferenceClient(api_key=os.environ["HF_TOKEN"])
 
